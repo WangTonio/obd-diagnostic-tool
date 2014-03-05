@@ -1,0 +1,18 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+The OBD Mobile Tool is an android application that interacts with an automobiles ECU (Engine Control Unit). The application will allow the user to view real time data such as vehicle speed, rpm, temperature, among others. A possible list of data that can viewed in the application is available at 
+http://en.wikipedia.org/wiki/OBD-II_PIDs .  <br>
+*NOTE* that not all commands in the OBD-II Standard will be implemented.<br>
+The Bluetooth device that will be used during the development of the application will be:<br>
+http://www.amazon.com/Yongtek-Bluetooth-Diagnostic-Scanner-Wireless/dp/B0076KBPNI/ref=sr_1_1/180-0002807-3700707?ie=UTF8&qid=1394008736&sr=8-1&keywords=obd+elm327
+
+= Details =
+
+The application will have four screens:
+  * Main Page, loaded when app is open.
+       * Button to Connect OBD-II Bluetooth Device
+  * Freeze Frame Data (A snap shot of data when screen is loaded)
+  * Live Data
+  * Diagnostic Trouble Codes(DTC) Look up and deletion
