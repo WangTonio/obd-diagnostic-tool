@@ -18,8 +18,12 @@ The application will have five(maybe more or less) screens:
   * Diagnostic Trouble Codes(DTC) Look up and deletion
 = Mockups =
 ===Main Screen====
+<a href="http://imgur.com/idJL702"><img src="http://i.imgur.com/idJL702.png" height="480"/></a>
 ===Settings===
+<a href="http://imgur.com/3RkJgr2"><img src="http://i.imgur.com/3RkJgr2.png" height="480"/></a>
 ===Freeze Frame ---May Remove doesn't seem useful---===
+<a href="http://imgur.com/6cQXTVj"><img src="http://i.imgur.com/6cQXTVj.png" height="480"/></a>
 ===Live Data===
+<a href="http://imgur.com/eD8EcxP"><img src="http://i.imgur.com/eD8EcxP.png" width="480"/></a>
 ===DTC Code Look up/Deletion===
-http://code.google.com/p/obd-diagnostic-tool/wiki/img/settings.jpeg
+<a href="http://imgur.com/xuiTETq"><img src="http://i.imgur.com/xuiTETq.png" height="480"/></a>
