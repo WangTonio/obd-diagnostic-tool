@@ -22,4 +22,4 @@ The application will have five(maybe more or less) screens:
 ===Freeze Frame ---May Remove doesn't seem useful---===
 ===Live Data===
 ===DTC Code Look up/Deletion===
-[https://www.dropbox.com/s/8vq8vwujsvd7w8v/DTCLookup.png]
+https://www.dropbox.com/s/8vq8vwujsvd7w8v/DTCLookup.png
