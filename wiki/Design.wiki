@@ -10,14 +10,16 @@ The Bluetooth device that will be used during the development of the application
 
 = Details =
 
-The application will have four screens:
+The application will have five(maybe more or less) screens:
   * Main Page, loaded when app is open.
        * Button to Connect OBD-II Bluetooth Device
   * Freeze Frame Data (A snap shot of data when screen is loaded)
   * Live Data ( Possibly with visual Gauges for some data like rpm speed and temp)
   * Diagnostic Trouble Codes(DTC) Look up and deletion
-
+= Mockups =
 ===Main Screen====
-===Freeze Frame===
+===Settings===
+===Freeze Frame ---May Remove doesn't seem useful---===
 ===Live Data===
 ===DTC Code Look up/Deletion===
+[https://www.dropbox.com/s/8vq8vwujsvd7w8v/DTCLookup.png]
