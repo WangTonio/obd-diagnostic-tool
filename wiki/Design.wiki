@@ -33,4 +33,4 @@ A list of trouble codes(if any are present). A button at the bottom
 to delete current DTC on the ECU.
 ===Freeze Frame===
 <a href="http://imgur.com/6cQXTVj"><img src="http://i.imgur.com/6cQXTVj.png" height="480"/></a><br>
-Shows current frozen data that is in the ECU when a DTC occurs. Only emission-related diagnostic trouble codes will trigger DTC free frame stores.
+Shows current frozen data that is in the ECU when a DTC occurs. Only emission-related diagnostic trouble codes will trigger DTC freeze frame stores.
