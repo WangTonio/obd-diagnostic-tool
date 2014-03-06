@@ -6,24 +6,31 @@ The OBD Mobile Tool is an android application that interacts with an automobiles
 [http://en.wikipedia.org/wiki/OBD-II_PIDs OBD-II Standard] .  <br>
 *NOTE* that not all commands in the OBD-II Standard will be implemented.<br>
 The Bluetooth device that will be used during the development of the application will be:<br>
-[http://www.amazon.com/Yongtek-Bluetooth-Diagnostic-Scanner-Wireless/dp/B0076KBPNI/ref=sr_1_1/180-0002807-3700707?ie=UTF8&qid=1394008736&sr=8-1&keywords=obd+elm327 ELM-327-Bluetooh-Device]
+[http://www.amazon.com/Yongtek-Bluetooth-Diagnostic-Scanner-Wireless/dp/B0076KBPNI/ref=sr_1_1/180-0002807-3700707?ie=UTF8&qid=1394008736&sr=8-1&keywords=obd+elm327 ELM-327-Bluetooh-Device] May Change.
 
 = Details =
 
 The application will have five(maybe more or less) screens:
   * Main Page, loaded when app is open.
        * Button to Connect OBD-II Bluetooth Device
-  * Freeze Frame Data (A snap shot of data when screen is loaded)
   * Live Data ( Possibly with visual Gauges for some data like rpm speed and temp)
   * Diagnostic Trouble Codes(DTC) Look up and deletion
+  * Freeze Frame Data (A snap shot of data when a emission-related diagnostic trouble code occurs)
 = Mockups =
 ===Main Screen====
-<a href="http://imgur.com/idJL702"><img src="http://i.imgur.com/idJL702.png" height="480"/></a>
+<a href="http://imgur.com/idJL702"><img src="http://i.imgur.com/idJL702.png" height="480"/></a><br>
+The top scroll bar will be used to navigate through the application. The center status button/label will be used to connect and show the status of a OBD device.
 ===Settings===
-<a href="http://imgur.com/3RkJgr2"><img src="http://i.imgur.com/3RkJgr2.png" height="480"/></a>
-===Freeze Frame ---May Remove doesn't seem useful---===
-<a href="http://imgur.com/6cQXTVj"><img src="http://i.imgur.com/6cQXTVj.png" height="480"/></a>
+<a href="http://imgur.com/3RkJgr2"><img src="http://i.imgur.com/3RkJgr2.png" height="480"/></a><br>
+Just a basic settings screen that will allow users to set attributes
+for the application. For example, temps in F or C, and speed in MPH or kM/h.
 ===Live Data===
-<a href="http://imgur.com/eD8EcxP"><img src="http://i.imgur.com/eD8EcxP.png" width="480"/></a>
+<a href="http://imgur.com/eD8EcxP"><img src="http://i.imgur.com/eD8EcxP.png" width="480"/></a><br>
+Show live data dyring vehicle operation. Some values that will be shown are speed, rpm, temperator, throttle position, and maybe more.
 ===DTC Code Look up/Deletion===
-<a href="http://imgur.com/xuiTETq"><img src="http://i.imgur.com/xuiTETq.png" height="480"/></a>
+<a href="http://imgur.com/xuiTETq"><img src="http://i.imgur.com/xuiTETq.png" height="480"/></a><br>
+A list of trouble codes(if any are present). A button at the bottom
+to delete current DTC on the ECU.
+===Freeze Frame===
+<a href="http://imgur.com/6cQXTVj"><img src="http://i.imgur.com/6cQXTVj.png" height="480"/></a><br>
+Shows current frozen data that is in the ECU when a DTC occurs. Only emission-related diagnostic trouble codes will trigger DTC free frame stores.
