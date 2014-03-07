@@ -15,7 +15,7 @@ The application will have five(maybe more or less) screens:
        * Button to Connect OBD-II Bluetooth Device
   * Live Data ( Possibly with visual Gauges for some data like rpm speed and temp)
   * Diagnostic Trouble Codes(DTC) Look up and deletion
-  * Freeze Frame Data (A snap shot of data when a emission-related diagnostic trouble code occurs)
+  * Freeze Frame Data (A snap shot of data when a emission-related diagnostic trouble code occurs)<br>
 = Mockups =
 ===Main Screen====
 <a href="http://imgur.com/idJL702"><img src="http://i.imgur.com/idJL702.png" height="480"/></a><br>
