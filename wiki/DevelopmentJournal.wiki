@@ -1,0 +1,9 @@
+= Week of March 20th =
+  * Researched Java Bluetooth API for possible OBD Emulation(Scratched)
+  * Created Main Screen
+  * Created preference fragment
+
+= Week of March 27th = 
+  * Reworking application to a fragment layout
+  * designing gauges for Live Data fragments
+  * design connect button on main fragment screen
