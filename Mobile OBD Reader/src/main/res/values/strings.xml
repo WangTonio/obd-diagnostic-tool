@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OBDMobileReader</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_preferences">Preferences</string>
+    <string name="title_Main">Main</string>
+    <string name="title_LD">Live Data</string>
+    <string name="title_DTCLU">Trouble Code Look Up</string>
+    <string name="title_time">Time</string>
+    <string name="title_timeFormat">Time Format</string>
+    <string name="sum_time">Set time Format</string>
+    <string name="title_date">Date</string>
+    <string name="title_dateFormat">Date Format</string>
+    <string name="sum_date">Set Date Format</string>
+    <string name="title_accel">Acceleration</string>
+    <string name="sum_accel">Set units for Acceleration</string>
+    <string name="title_speed">Speed</string>
+    <string name="sum_speed">Set units for Speed</string>
+    <string name="title_press">Pressure</string>
+    <string name="sum_press">Set units for Pressure</string>
+    <string name="title_temp">Temperature</string>
+    <string name="sum_temp">Set units for Temperature</string>
+    <string name="title_area">Area</string>
+    <string name="sum_area">Set units for Area</string>
+    <string name="title_weight">Weight</string>
+    <string name="sum_wt">Set units for Weight</string>
+    <string name="title_units">Units</string>
+    <string name="stat_connect">Connected</string>
+    <string name="stat_disconnect">Disconnected</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_con_content">Disconnected Image</string>
+</resources>

@@ -1,0 +1,14 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.souza.obdmobilereader.obdmobilereader.mobileobdreader.DtcLookUpFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+</FrameLayout>
+<!-- From: file:/C:/Users/Tony/OBDMobileReader/Mobile%20OBD%20Reader/src/main/res/layout/fragment_dtc_look_up.xml -->
