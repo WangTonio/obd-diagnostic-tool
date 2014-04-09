@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gaugelayout"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+
+        <Button
+            android:id="@+id/gaugeBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="onClick"/>
+
+        <RelativeLayout
+            android:id="@+id/tempLayout"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/tempGauge"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/engtemp"
+                android:contentDescription="temprature gauge" />
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/needle"
+                android:id="@+id/tempNeedle" />
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/spdLayout"
+            android:layout_width="200dp"
+            android:layout_height="175dp"
+            android:layout_below="@+id/tempLayout"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/speedGauge"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/speedgauge"
+                android:contentDescription="Speedometer Gauge" />
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="74dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/needle"
+                android:id="@+id/spdNeedle" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rpmlayout"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_below="@+id/spdLayout"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/rpmgauge"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/rpmgauge"
+                android:contentDescription="rpm gauge" />
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/needle"
+                android:id="@+id/rpmNeedle" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/engloadlayout"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_below="@+id/rpmlayout"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/engload"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/engload"
+                android:contentDescription="rpm gauge" />
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/needle"
+                android:id="@+id/engloadneedle" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/intaketemplayout"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_below="@+id/engloadlayout"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/intaketempv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/intaketemp"
+                android:contentDescription="rpm gauge" />
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/needle"
+                android:id="@+id/inttempneedle" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/voltlayout"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_below="@+id/intaketemplayout"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            >
+
+            <ImageView
+                android:id="@+id/voltgaugev"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/voltgauge"
+                android:contentDescription="Voltage gauge" />
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="88dp"
+                android:layout_marginLeft="61dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/needle"
+                android:id="@+id/voltneedle" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
+<!-- From: file:/C:/Users/Tony/OBDMobileReader/Mobile%20OBD%20Reader/src/main/res/layout/fragment_live_data.xml -->

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen
+        android:key="btn_Units"
+        android:title="Units"
+        android:persistent="false"
+        android:summary="Set units for measurements">
+        <PreferenceCategory android:title="@string/title_units">
+            <ListPreference
+                android:key="btn_speedPref"
+                android:title="@string/title_speed"
+                android:summary="@string/sum_speed"
+                android:entries="@array/speedUnits"
+                android:entryValues="@array/listValues"/>
+            <ListPreference
+                android:key="btn_tempPref"
+                android:title="@string/title_temp"
+                android:summary="@string/sum_temp"
+                android:entries="@array/tempUnits"
+                android:entryValues="@array/listValues" />
+            <ListPreference
+                android:key="btn_presPref"
+                android:title="@string/title_press"
+                android:summary="@string/sum_press"
+                android:dialogTitle="@string/title_press"
+                android:entries="@array/pressPref"
+                android:entryValues="@array/listValues"/>
+            <ListPreference
+                android:key="btn_accelPref"
+                android:summary="@string/sum_accel"
+                android:title="@string/title_accel"
+                android:dialogTitle="@string/title_accel"
+                android:entries="@array/accelPref"
+                android:entryValues="@array/listValues"
+                android:defaultValue="g"/>
+            <ListPreference
+                android:key="btn_areaPref"
+                android:summary="@string/sum_area"
+                android:title="@string/title_area"
+                android:dialogTitle="@string/title_area"
+                android:entries="@array/areaPref"
+                android:entryValues="@array/listValues"/>
+            <ListPreference
+                android:key="btn_"
+                />
+        </PreferenceCategory>
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="btn_tdFormat"
+        android:title="Time &amp; Date"
+        android:summary="Set time and date format"
+        android:persistent="true">
+        <ListPreference
+            android:key="btn_timePref"
+            android:title="@string/title_time"
+            android:summary=""
+            android:dialogTitle="@string/title_timeFormat"
+            android:entries="@array/timePref"
+            android:entryValues="@array/timePref"
+            />
+        <ListPreference
+            android:key="btn_datePref"
+            android:title="@string/title_date"
+            android:dialogTitle="@string/title_dateFormat"
+            android:entries="@array/datePref"
+            android:entryValues="@array/listValues"
+            />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:key="btn_activegauge"
+        android:title="Active gauges"
+        android:summary="Set current displayed gauges on screen"
+        android:persistent="true">
+            <CheckBoxPreference
+                android:key="showtemp"
+                android:title="Show Temperature"
+                android:summary="Display Temperature Gauge?"
+                android:defaultValue="true"
+                />
+
+            <CheckBoxPreference
+                android:key="showspeed"
+                android:title="Show Speedometer"
+                android:summary="Display Speedometer Gauge?"
+                android:defaultValue="true"
+                />
+            <CheckBoxPreference
+                android:key="showrpm"
+                android:title="Show RPMs"
+                android:summary="Display RPM Gauge?"
+                android:defaultValue="true"
+                />
+            <CheckBoxPreference
+                android:key="showengineload"
+                android:title="Show Engine Load"
+                android:summary="Display Engine Load Gauge?"
+                android:defaultValue="true"
+                />
+            <CheckBoxPreference
+                android:key="showintaketemp"
+                android:title="Show Intake Temperature"
+                android:summary="Display Intake Temperature Gauge?"
+                android:defaultValue="true"
+                />
+            <CheckBoxPreference
+                android:key="showvolt"
+                android:title="Show Voltage"
+                android:summary="Display Voltage Gauge?"
+                android:defaultValue="true"
+                />
+
+    </PreferenceScreen>
+
+
+</PreferenceScreen><!-- From: file:/C:/Users/Tony/OBDMobileReader/Mobile%20OBD%20Reader/src/main/res/xml/preferences.xml -->

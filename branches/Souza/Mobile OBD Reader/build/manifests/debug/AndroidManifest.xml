@@ -1,0 +1,16 @@
+<!-- From: file:/C:/Users/Tony/OBDMobileReader/Mobile%20OBD%20Reader/src/main/AndroidManifest.xml --><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="org.souza.obdmobilereader.obdmobilereader.mobileobdreader">
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19"/>
+
+    <application android:allowBackup="true" android:icon="@drawable/ic_launcher" android:label="@string/app_name" android:theme="@style/AppTheme">
+        <activity android:label="@string/app_name" android:name="org.souza.obdmobilereader.obdmobilereader.mobileobdreader.OBD_Main" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:label="Settings" android:name="org.souza.obdmobilereader.obdmobilereader.mobileobdreader.SetPrefActivity">
+        </activity>
+    </application>
+
+</manifest>
