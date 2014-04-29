@@ -35,4 +35,5 @@
     <string name="btn_clearcodes">Clear Codes</string>
     <string name="needle_x_val">63</string>
     <string name="needle_y_val">18</string>
+    <string name="title_exit">Exit</string>
 </resources>

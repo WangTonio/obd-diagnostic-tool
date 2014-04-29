@@ -41,10 +41,7 @@ public class DtcListAdapter extends BaseAdapter {
     }
 
     public void addCode(String code, String summary){
-        DtcListItem newItem =  new DtcListItem();
-        newItem.setCode(code);
-        newItem.setSummary(summary);
-        _codes.add(newItem);
+        _codes.add(new DtcListItem(code,summary));
         this.notifyDataSetChanged();
     }
 

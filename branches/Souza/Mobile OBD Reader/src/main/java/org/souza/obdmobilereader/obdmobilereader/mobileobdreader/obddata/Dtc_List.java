@@ -5,9 +5,6 @@ import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.DtcListItem;
 import java.util.ArrayList;
 import java.util.Random;
 
-/**
- * Created by Tony on 4/8/2014.
- */
 public class Dtc_List {
     private static final ArrayList<DtcListItem> trblCodeList;
     static{

@@ -8,14 +8,14 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/gaugelayout"
         android:orientation="vertical"
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent">
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
         <Button
             android:id="@+id/gaugeBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:onClick="onClick"/>
+            android:onClick="onClickGauge"/>
 
         <RelativeLayout
             android:id="@+id/tempLayout"
@@ -27,16 +27,16 @@
 
             <ImageView
                 android:id="@+id/tempGauge"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/engtemp"
                 android:contentDescription="temprature gauge" />
 
             <ImageView
                 android:layout_width="42dp"
-                android:layout_height="88dp"
+                android:layout_height="92dp"
                 android:layout_marginLeft="63dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/needle"
                 android:id="@+id/tempNeedle" />
             </RelativeLayout>
@@ -52,15 +52,15 @@
 
             <ImageView
                 android:id="@+id/speedGauge"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/speedgauge"
                 android:contentDescription="Speedometer Gauge" />
 
             <ImageView
                 android:layout_width="42dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="74dp"
+                android:layout_height="92dp"
+                android:layout_marginLeft="78dp"
                 android:layout_marginTop="18dp"
                 android:src="@drawable/needle"
                 android:id="@+id/spdNeedle" />
@@ -84,7 +84,7 @@
 
             <ImageView
                 android:layout_width="42dp"
-                android:layout_height="88dp"
+                android:layout_height="92dp"
                 android:layout_marginLeft="63dp"
                 android:layout_marginTop="18dp"
                 android:src="@drawable/needle"
@@ -109,9 +109,9 @@
 
             <ImageView
                 android:layout_width="42dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="63dp"
-                android:layout_marginTop="18dp"
+                android:layout_height="92dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/needle"
                 android:id="@+id/engloadneedle" />
         </RelativeLayout>
@@ -134,8 +134,8 @@
 
             <ImageView
                 android:layout_width="42dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="63dp"
+                android:layout_height="92dp"
+                android:layout_marginLeft="65dp"
                 android:layout_marginTop="18dp"
                 android:src="@drawable/needle"
                 android:id="@+id/inttempneedle" />
@@ -159,9 +159,9 @@
 
             <ImageView
                 android:layout_width="42dp"
-                android:layout_height="88dp"
-                android:layout_marginLeft="61dp"
-                android:layout_marginTop="18dp"
+                android:layout_height="92dp"
+                android:layout_marginLeft="65dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/needle"
                 android:id="@+id/voltneedle" />
         </RelativeLayout>

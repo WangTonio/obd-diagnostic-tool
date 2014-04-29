@@ -37,7 +37,7 @@ public class DtcLookUpFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    DtcListAdapter codeAdapter;
+    public DtcListAdapter codeAdapter;
     ArrayList<DtcListItem> codes;
 
     /**
@@ -61,6 +61,7 @@ public class DtcLookUpFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public DtcListAdapter getCodeAdapter(){return this.codeAdapter;}
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
