@@ -7,3 +7,19 @@
   * Reworking application to a fragment layout
   * designing gauges for Live Data fragments
   * design connect button on main fragment screen
+
+= Week of April 3rd =
+
+= Week of April 10th =
+
+= Week of April 17th =
+
+= Week of April 24th =
+
+= Week of May 1st    =
+
+= Week of May 8th    =
+
+= Week of May 15th   =
+
+= Week of May 22nd   =
