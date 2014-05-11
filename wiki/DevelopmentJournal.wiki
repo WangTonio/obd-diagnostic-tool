@@ -9,12 +9,19 @@
   * design connect button on main fragment screen
 
 = Week of April 3rd =
+ * Finished Static gauges
+ * Implemented Gauge Handler
+ * Added Rotate Animation Code
+ * Fixed Bug where needle would not rotate correctly
+
+= Week of April 10th =
  * Worked DTC LookUp Fragment
  * Added custom list item for list view
  * Implemented Custom Adapter for ListView
-= Week of April 10th =
 
 = Week of April 17th =
+ * Added Preference Activity
+ * Configured Preference XML
 
 = Week of April 24th =
 
@@ -25,3 +32,4 @@
 = Week of May 15th   =
 
 = Week of May 22nd   =
+Demo Day
