@@ -9,7 +9,9 @@
   * design connect button on main fragment screen
 
 = Week of April 3rd =
-
+ * Worked DTC LookUp Fragment
+ * Added custom list item for list view
+ * Implemented Custom Adapter for ListView
 = Week of April 10th =
 
 = Week of April 17th =
