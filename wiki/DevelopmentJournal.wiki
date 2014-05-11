@@ -18,17 +18,24 @@
  * Worked DTC LookUp Fragment
  * Added custom list item for list view
  * Implemented Custom Adapter for ListView
+ * Presented This week
 
 = Week of April 17th =
  * Added Preference Activity
  * Configured Preference XML
+ * Started working on Data Generator
 
 = Week of April 24th =
+ * Started Implementing Bluetooth functionality
+ * Researched/Started Implementing Custom Widget for new scalable Gauges
 
 = Week of May 1st    =
+ * Finished Custom Widget for Gauges
+ * Replaced Static Gauges with custom Widget, removed code that was dependent on static gauges.
+ * Added code for custom XML attributes and retrieving those attributes
 
 = Week of May 8th    =
-
+ * Working on Scaling issues with Gauge scale and needle accuracy
 = Week of May 15th   =
 
 = Week of May 22nd   =
