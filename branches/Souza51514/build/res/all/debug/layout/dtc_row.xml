@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:background="@drawable/listitembgrnd">
+
+        <TextView
+            android:id="@+id/dtcode"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/dtcsum"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:textColor="#ffffff"
+
+            android:gravity="center"
+            android:layout_marginLeft="30dp"/>
+
+</LinearLayout><!-- From: file:/C:/Users/Tony/OBDMobileReader/Mobile%20OBD%20Reader/src/main/res/layout/dtc_row.xml -->
