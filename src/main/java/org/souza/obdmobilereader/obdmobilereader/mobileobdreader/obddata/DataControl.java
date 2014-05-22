@@ -67,7 +67,7 @@ public class DataControl {
             try {
                 while(this.isRunning){
                     val = (float) Math.cos(((float)x/10));
-                    for(int i =0;i< size-5;i++) {
+                    for(int i =0;i< size;i++) {
                         tmp = gauges.get(i);
                         int valInt = (int) (val*tmp.getMaxVal());
                         gHanlder.obtainMessage(0, tmp.getGaugeID(), valInt).sendToTarget();

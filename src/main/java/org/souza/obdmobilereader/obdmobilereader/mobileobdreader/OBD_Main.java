@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -32,7 +33,7 @@ import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.obddata.DataGen
 import java.util.ArrayList;
 
 
-public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFragmentInteractionListener {
+public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFragmentInteractionListener,DeviceListFragment.onDeviceSelectionListener{
 
     public DtcLookUpFragment.OnFragmentInteractionListener dtcLookUpCom;
     public static final int TAB_CNT  = 3;
@@ -41,6 +42,7 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
     public static final int DTC_TAB  = 2;
 
     BluetoothAdapter mBTA;
+    BluetoothDevice  mDev;
     BluetoothSession mBTS;
     public static boolean isConnected = false;
     private static boolean isLoaded = false;
@@ -95,23 +97,23 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         temp.add((new DataGen(0,tmp.getMaxVal(),tmp.getMinVal())));
 
         tmp = (Gauge) findViewById(R.id.speedgauge);
-        temp.add((new DataGen(0,tmp.getMaxVal(),tmp.getMinVal())));
+        temp.add((new DataGen(1,tmp.getMaxVal(),tmp.getMinVal())));
 
 
         tmp = (Gauge) findViewById(R.id.rpmgauge);
-        temp.add((new DataGen(0,tmp.getMaxVal(),tmp.getMinVal())));
+        temp.add((new DataGen(2,tmp.getMaxVal(),tmp.getMinVal())));
 
 
         tmp = (Gauge) findViewById(R.id.engloadgauge);
-        temp.add((new DataGen(0,tmp.getMaxVal(),tmp.getMinVal())));
+        temp.add((new DataGen(3,tmp.getMaxVal(),tmp.getMinVal())));
 
 
         tmp = (Gauge) findViewById(R.id.intaketemp);
-        temp.add((new DataGen(0,tmp.getMaxVal(),tmp.getMinVal())));
+        temp.add((new DataGen(4,tmp.getMaxVal(),tmp.getMinVal())));
 
 
         tmp = (Gauge) findViewById(R.id.voltage);
-        temp.add((new DataGen(0,tmp.getMaxVal(),tmp.getMinVal())));
+        temp.add((new DataGen(5,tmp.getMaxVal(),tmp.getMinVal())));
 
 
         dc = new DataControl(temp, gHandler);
@@ -160,8 +162,8 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
             public void onPageSelected(int position){
                 getActionBar().setSelectedNavigationItem(position);
                 if(position == 1){
-                    Toast ts = Toast.makeText(getApplication(),"Live Data Tab",Toast.LENGTH_LONG);
-                    ts.show();
+                    Toast.makeText(getApplication(),"Live Data Tab",Toast.LENGTH_LONG).show();
+
                     if(!isLoaded && isConnected){
                         Log.d("DataControl Run", "Starting thread");
                        // dc.startGenerator();
@@ -265,10 +267,20 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         switch(pressed){
             case 0:
                 setupDataGenerator();
+                //Select Paired Device
+                android.app.FragmentManager manager = getFragmentManager();
+                DeviceListFragment dlf = new DeviceListFragment();
+                dlf.show(manager,null);
+
+                //this.mBTS = new BluetoothSession(this.dc.getGauges(),this.mBTA,this.gHandler);
                 btn.setBackgroundResource(R.drawable.consucc);
                 tv.setText("Connected");
                 break;
             case 1:
+                //Remove Data Control Object
+                this.dc = null;
+                //Close Bluetooth Session
+                this.mBTS = null;
                 btn.setBackgroundResource(R.drawable.confail);
                 tv.setText("Disconnected");
                 break;
@@ -278,9 +290,18 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         Log.d("onClick -->"," "+isConnected);
         isConnected ^= true;
     }
+
     public void onClickGauge(View view){
         dc.startGenerator();
     }
+
+    @Override
+    public void onDeviceSelect(BluetoothDevice dev) {
+        this.mDev = dev;
+        Toast.makeText(this,"Dev: " +  dev.getName() + " Addr: " + dev.getAddress(),Toast.LENGTH_LONG).show();
+    }
+
+
     public class MyAdapter extends FragmentPagerAdapter{
 
         public MyAdapter(FragmentManager fm){
@@ -317,31 +338,44 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
             int gaugeID = msg.arg1;
             int val = msg.arg2;
             Gauge tmpG;
+            final TextView tmpV;
             //Will need to switch to PID for bluetooth access
             switch(gaugeID){
                 case 0:
                     tmpG = (Gauge) findViewById(R.id.tempgauge);
                     tmpG.setHandTarget(val);
+                    tmpV = (TextView)findViewById(R.id.temptxt);
+                    tmpV.setText(val+"");
                     break;
                 case 1:
                     tmpG = (Gauge) findViewById(R.id.speedgauge);
                     tmpG.setHandTarget(val);
+                    tmpV = (TextView) findViewById(R.id.speedtxt);
+                    tmpV.setText(val+"");
                     break;
                 case 2:
                     tmpG = (Gauge) findViewById(R.id.rpmgauge);
                     tmpG.setHandTarget(val);
+                    tmpV = (TextView) findViewById(R.id.rpmtxt);
+                    tmpV.setText(val+"");
                     break;
                 case 3:
                     tmpG = (Gauge) findViewById(R.id.engloadgauge);
                     tmpG.setHandTarget(val);
+                    tmpV = (TextView) findViewById(R.id.engltxt);
+                    tmpV.setText(val+"");
                     break;
                 case 4:
                     tmpG = (Gauge) findViewById(R.id.intaketemp);
                     tmpG.setHandTarget(val);
+                    tmpV = (TextView) findViewById(R.id.inttemptxt);
+                    tmpV.setText(val+"");
                     break;
                 case 5:
                     tmpG = (Gauge) findViewById(R.id.voltage);
                     tmpG.setHandTarget(val);
+                    tmpV = (TextView) findViewById(R.id.volttxt);
+                    tmpV.setText(val+"");
                     break;
             }
 

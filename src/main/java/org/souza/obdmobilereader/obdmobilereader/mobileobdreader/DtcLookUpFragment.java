@@ -9,9 +9,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ListView;
 
+import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.dtclookup.DtcListAdapter;
+import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.dtclookup.DtcListItem;
 import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.obddata.Dtc_CodeList;
 
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
 package org.souza.obdmobilereader.obdmobilereader.mobileobdreader.obddata;
 
-import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.DtcListItem;
+import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.dtclookup.DtcListItem;
 
 import java.util.ArrayList;
 import java.util.Random;
