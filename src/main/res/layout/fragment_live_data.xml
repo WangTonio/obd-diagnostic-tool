@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:Gauge="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gaugelayout"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <Button
+            android:id="@+id/gaugeBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="onClickGauge"/>
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center">
+
+            <org.souza.obdmobilereader.obdmobilereader.mobileobdreader.Gauge.Gauge
+                android:id="@+id/tempgauge"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                Gauge:maxDeg="110"
+                Gauge:minDeg="-110"
+                Gauge:maxVal="250"
+                Gauge:minVal="50"
+                Gauge:stride="20"
+                Gauge:totalTicks="22"
+                Gauge:tempGradient="true"/>
+            <TextView
+                android:id="@+id/temptxtname"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/tempgauge"
+                android:layout_alignBottom="@+id/tempgauge"
+                android:layout_marginBottom="150dp"
+                android:layout_marginLeft="105dp"
+                android:text="Temp F"
+                android:textColor="#ffffff"
+                />
+
+            <TextView
+                android:id="@+id/temptxt"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/tempgauge"
+                android:layout_alignBottom="@+id/tempgauge"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="125dp"
+                android:text="50"
+                android:textColor="#ffffff"
+                />
+
+            </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center">
+        <org.souza.obdmobilereader.obdmobilereader.mobileobdreader.Gauge.Gauge
+            android:id="@+id/speedgauge"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            Gauge:maxDeg="140"
+            Gauge:minDeg="-110"
+            Gauge:maxVal="160"
+            Gauge:minVal="0"
+            Gauge:stride="10"
+            Gauge:totalTicks="34"
+            Gauge:tempGradient="false"/>
+
+            <TextView
+                android:id="@+id/speedtname"
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/speedgauge"
+                android:layout_alignBottom="@+id/speedgauge"
+                android:layout_marginBottom="150dp"
+                android:layout_marginLeft="115dp"
+                android:text="MPH"
+                android:textColor="#ffffff"
+                />
+
+            <TextView
+                android:id="@+id/speedtxt"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/speedgauge"
+                android:layout_alignBottom="@+id/speedgauge"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="125dp"
+                android:text="0"
+                android:textColor="#ffffff"
+                />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center">
+        <org.souza.obdmobilereader.obdmobilereader.mobileobdreader.Gauge.Gauge
+            android:id="@+id/rpmgauge"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            Gauge:maxDeg="90"
+            Gauge:minDeg="-90"
+            Gauge:maxVal="8"
+            Gauge:minVal="0"
+            Gauge:stride="1"
+            Gauge:totalTicks="18"
+            Gauge:tempGradient="false"/>
+
+            <TextView
+                android:id="@+id/rpmtname"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/rpmgauge"
+                android:layout_alignBottom="@+id/rpmgauge"
+                android:layout_marginBottom="150dp"
+                android:layout_marginLeft="95dp"
+                android:text="x1000 RPM"
+                android:textColor="#ffffff"
+                />
+
+            <TextView
+                android:id="@+id/rpmtxt"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/rpmgauge"
+                android:layout_alignBottom="@+id/rpmgauge"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="125dp"
+                android:text="0"
+                android:textColor="#ffffff"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center">
+        <org.souza.obdmobilereader.obdmobilereader.mobileobdreader.Gauge.Gauge
+            android:id="@+id/engloadgauge"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            Gauge:maxDeg="90"
+            Gauge:minDeg="-90"
+            Gauge:maxVal="100"
+            Gauge:minVal="0"
+            Gauge:stride="10"
+            Gauge:totalTicks="22"
+            Gauge:tempGradient="false"/>
+
+            <TextView
+                android:id="@+id/englname"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/engloadgauge"
+                android:layout_alignBottom="@+id/engloadgauge"
+                android:layout_marginBottom="150dp"
+                android:layout_marginLeft="90dp"
+                android:text="Eng Load %"
+                android:textColor="#ffffff"
+                />
+
+            <TextView
+                android:id="@+id/engltxt"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/engloadgauge"
+                android:layout_alignBottom="@+id/engloadgauge"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="125dp"
+                android:text="0"
+                android:textColor="#ffffff"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center">
+        <org.souza.obdmobilereader.obdmobilereader.mobileobdreader.Gauge.Gauge
+            android:id="@+id/intaketemp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            Gauge:maxDeg="120"
+            Gauge:minDeg="-120"
+            Gauge:maxVal="130"
+            Gauge:minVal="30"
+            Gauge:stride="10"
+            Gauge:totalTicks="22"
+            Gauge:tempGradient="true"/>
+
+            <TextView
+                android:id="@+id/inttemptxtname"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/intaketemp"
+                android:layout_alignBottom="@+id/intaketemp"
+                android:layout_marginBottom="150dp"
+                android:layout_marginLeft="90dp"
+                android:text="Int Femp F"
+                android:textColor="#ffffff"
+                />
+
+            <TextView
+                android:id="@+id/inttemptxt"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/intaketemp"
+                android:layout_alignBottom="@+id/intaketemp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="125dp"
+                android:text="30"
+                android:textColor="#ffffff"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center">
+        <org.souza.obdmobilereader.obdmobilereader.mobileobdreader.Gauge.Gauge
+            android:id="@+id/voltage"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            Gauge:maxDeg="120"
+            Gauge:minDeg="-120"
+            Gauge:maxVal="16"
+            Gauge:minVal="11"
+            Gauge:stride="0.5"
+            Gauge:totalTicks="22"
+            Gauge:tempGradient="false"/>
+
+            <TextView
+                android:id="@+id/volttname"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/voltage"
+                android:layout_alignBottom="@+id/voltage"
+                android:layout_marginBottom="150dp"
+                android:layout_marginLeft="100dp"
+                android:text="Voltage"
+                android:textColor="#ffffff"
+                />
+
+            <TextView
+                android:id="@+id/volttxt"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:textAlignment="center"
+                android:layout_above="@+id/voltage"
+                android:layout_alignBottom="@+id/voltage"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="125dp"
+                android:text="0"
+                android:textColor="#ffffff"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
