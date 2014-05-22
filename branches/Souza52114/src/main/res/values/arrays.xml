@@ -1,46 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="speedUnits">
-        <item>MPH</item>
-        <item>km/h</item>
-    </string-array>
-    <string-array name="tempUnits">
-        <item>F</item>
-        <item>C</item>
-    </string-array>
-    <string-array name="distUnits">
-        <item>miles</item>
-        <item>km</item>
-    </string-array>
-    <string-array name="timePref">
-        <item>12h</item>
-        <item>24h</item>
-    </string-array>
-    <string-array name="datePref">
-        <item>dd/mm/yyyy</item>
-        <item>mm/dd/yyyy</item>
-    </string-array>
-    <string-array name="wtPref">
-        <item>lb</item>
-        <item>kg</item>
-    </string-array>
-    <string-array name="areaPref">
-        <item>ft^2</item>
-        <item>m^2</item>
-    </string-array>
-    <string-array name="pressPref">
-        <item>kPa</item>
-        <item>inHg</item>
-        <item>kg/cm^2</item>
-    </string-array>
-    <string-array name="accelPref">
-        <item>g</item>
-        <item>ft/s^2</item>
-        <item>m/s^2</item>
-    </string-array>
-    <string-array name="listValues">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
+
 </resources>

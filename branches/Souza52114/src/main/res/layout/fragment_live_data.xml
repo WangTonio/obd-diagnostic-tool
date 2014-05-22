@@ -9,7 +9,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/gaugelayout"
         android:orientation="vertical"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent">
 
         <Button
@@ -19,6 +19,7 @@
             android:onClick="onClickGauge"/>
 
         <RelativeLayout
+            android:id="@+id/tempLayout"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center">
@@ -44,7 +45,8 @@
                 android:layout_alignBottom="@+id/tempgauge"
                 android:layout_marginBottom="150dp"
                 android:layout_marginLeft="105dp"
-                android:text="Temp F"
+                android:textSize="15sp"
+                android:text="@string/tempgaugetitle"
                 android:textColor="#ffffff"
                 />
 
@@ -56,8 +58,9 @@
                 android:layout_above="@+id/tempgauge"
                 android:layout_alignBottom="@+id/tempgauge"
                 android:layout_marginBottom="50dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginLeft="105dp"
                 android:text="50"
+                android:textSize="25sp"
                 android:textColor="#ffffff"
                 />
 
@@ -66,6 +69,7 @@
 
 
         <RelativeLayout
+            android:id="@+id/speedLayout"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center">
@@ -91,7 +95,8 @@
                 android:layout_alignBottom="@+id/speedgauge"
                 android:layout_marginBottom="150dp"
                 android:layout_marginLeft="115dp"
-                android:text="MPH"
+                android:textSize="15sp"
+                android:text="@string/speedGaugeTitle"
                 android:textColor="#ffffff"
                 />
 
@@ -103,7 +108,8 @@
                 android:layout_above="@+id/speedgauge"
                 android:layout_alignBottom="@+id/speedgauge"
                 android:layout_marginBottom="50dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginLeft="115dp"
+                android:textSize="25sp"
                 android:text="0"
                 android:textColor="#ffffff"
                 />
@@ -111,6 +117,7 @@
 
 
         <RelativeLayout
+            android:id="@+id/rpmLayout"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center">
@@ -136,7 +143,8 @@
                 android:layout_alignBottom="@+id/rpmgauge"
                 android:layout_marginBottom="150dp"
                 android:layout_marginLeft="95dp"
-                android:text="x1000 RPM"
+                android:textSize="15sp"
+                android:text="@string/rpmGaugeTitle"
                 android:textColor="#ffffff"
                 />
 
@@ -148,13 +156,15 @@
                 android:layout_above="@+id/rpmgauge"
                 android:layout_alignBottom="@+id/rpmgauge"
                 android:layout_marginBottom="50dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginLeft="115dp"
+                android:textSize="25sp"
                 android:text="0"
                 android:textColor="#ffffff"
                 />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/egnLoadLayout"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center">
@@ -180,7 +190,8 @@
                 android:layout_alignBottom="@+id/engloadgauge"
                 android:layout_marginBottom="150dp"
                 android:layout_marginLeft="90dp"
-                android:text="Eng Load %"
+                android:textSize="15sp"
+                android:text="@string/engLoadGaugeTitle"
                 android:textColor="#ffffff"
                 />
 
@@ -192,13 +203,15 @@
                 android:layout_above="@+id/engloadgauge"
                 android:layout_alignBottom="@+id/engloadgauge"
                 android:layout_marginBottom="50dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginLeft="115dp"
+                android:textSize="25sp"
                 android:text="0"
                 android:textColor="#ffffff"
                 />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/intakeTempLayout"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center">
@@ -224,7 +237,8 @@
                 android:layout_alignBottom="@+id/intaketemp"
                 android:layout_marginBottom="150dp"
                 android:layout_marginLeft="90dp"
-                android:text="Int Femp F"
+                android:textSize="15sp"
+                android:text="@string/intTempGaugeTitle"
                 android:textColor="#ffffff"
                 />
 
@@ -236,13 +250,15 @@
                 android:layout_above="@+id/intaketemp"
                 android:layout_alignBottom="@+id/intaketemp"
                 android:layout_marginBottom="50dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginLeft="115dp"
+                android:textSize="25sp"
                 android:text="30"
                 android:textColor="#ffffff"
                 />
 
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/voltLayout"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center">
@@ -268,7 +284,8 @@
                 android:layout_alignBottom="@+id/voltage"
                 android:layout_marginBottom="150dp"
                 android:layout_marginLeft="100dp"
-                android:text="Voltage"
+                android:textSize="15sp"
+                android:text="@string/voltGaugeTitle"
                 android:textColor="#ffffff"
                 />
 
@@ -280,7 +297,8 @@
                 android:layout_above="@+id/voltage"
                 android:layout_alignBottom="@+id/voltage"
                 android:layout_marginBottom="50dp"
-                android:layout_marginLeft="125dp"
+                android:layout_marginLeft="115dp"
+                android:textSize="25sp"
                 android:text="0"
                 android:textColor="#ffffff"
                 />

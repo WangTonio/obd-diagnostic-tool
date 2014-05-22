@@ -1,11 +1,9 @@
-package org.souza.obdmobilereader.obdmobilereader.mobileobdreader;
+package org.souza.obdmobilereader.obdmobilereader.mobileobdreader.dtclookup;
 
 
 public class DtcListItem {
     String code;
     String summary;
-    //No Arg constructor
-    public DtcListItem(){}
 
     public DtcListItem(String code, String summary){
         this.code = code;

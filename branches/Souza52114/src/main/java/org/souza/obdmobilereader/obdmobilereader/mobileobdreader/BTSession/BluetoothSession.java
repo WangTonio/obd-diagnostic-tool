@@ -26,12 +26,14 @@ public class BluetoothSession {
     private final BluetoothAdapter localBT;
     private BluetoothTransmission transmissionThread;
     private BluetoothConnect connectThread;
+    private Handler hanlder;
     private int bluetoothState;
 
 
-    public BluetoothSession(ArrayList<DataGen> gauges, BluetoothAdapter localBT) {
+    public BluetoothSession(ArrayList<DataGen> gauges, BluetoothAdapter localBT,Handler hanlder) {
         this.gauges         = gauges;
         this.localBT        = localBT;
+        this.hanlder        = hanlder;
         this.bluetoothState = DISCONNECTED;
     }
 
@@ -40,14 +42,57 @@ public class BluetoothSession {
         this.bluetoothState = state;
     }
 
+    public synchronized void connected(BluetoothSocket socket, BluetoothDevice mDevice){
+        if(this.connectThread != null)
+        {
+            this.connectThread.cancel();
+            this.connectThread = null;
+        }
+
+        if(this.transmissionThread != null)
+        {
+            this.transmissionThread.cancel();
+            this.transmissionThread = null;
+        }
+
+        this.transmissionThread =  new BluetoothTransmission(socket);
+        this.transmissionThread.start();
+
+    }
+
+    public synchronized void connectionAttemp()
+    {
+        /* Attempt to stop previous thread trying to make a connection */
+        if(this.connectThread != null)
+        {
+            this.connectThread.cancel();
+            this.connectThread = null;
+        }
+
+        /* Close any open connections */
+        if(this.transmissionThread != null)
+        {
+            this.transmissionThread.cancel();
+            this.transmissionThread = null;
+        }
+
+        //this.connectThread = BluetoothConnect()
+
+
+
+
+        setState(this.BUSY);
+
+
+    }
     private class BluetoothConnect extends Thread {
         private final BluetoothDevice mmDevice;
         private final BluetoothSocket  mmSocket;
 
         @SuppressLint("NewApi")
         public BluetoothConnect(BluetoothDevice device) {
-           this.mmDevice = device;
 
+           this.mmDevice = device;
             BluetoothSocket tmp = null;
 
             try{
@@ -72,11 +117,17 @@ public class BluetoothSession {
             try{
                 setState(BUSY);
                 this.mmSocket.connect();
+                setState(CONNECTED);
+                connected(this.mmSocket,this.mmDevice);
             }catch ( IOException ex){
                 setState(DISCONNECTED);
                 return;
+            }finally{
+                synchronized (BluetoothSession.this){
+                    connectThread = null;
+                }
             }
-            setState(CONNECTED);
+
         }
 
         /** Will cancel the listening socket, and cause the thread to finish */
