@@ -2,6 +2,7 @@ package org.souza.obdmobilereader.obdmobilereader.mobileobdreader;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.dtclookup.DtcListAdapter;
@@ -19,22 +21,15 @@ import java.util.ArrayList;
 import java.util.Random;
 
 
-/**
- * A simple {@link android.support.v4.app.Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link DtcLookUpFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link DtcLookUpFragment#newInstance} factory method to
- * create an instance of this fragment.
- *
- */
+
 public class DtcLookUpFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
+
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String BASEWEBADDR = "https://www.google.com/search?q=diagnostic+trouble+code+";
 
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
@@ -50,7 +45,7 @@ public class DtcLookUpFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment DtcLookUpFragment.
      */
-    // TODO: Rename and change types and number of parameters
+
     public static DtcLookUpFragment newInstance(String param1, String param2) {
         DtcLookUpFragment fragment = new DtcLookUpFragment();
         Bundle args = new Bundle();
@@ -83,6 +78,15 @@ public class DtcLookUpFragment extends Fragment {
         View rv = inflater.inflate(R.layout.fragment_dtc_look_up, container, false);
 
         ListView lv =(ListView)rv.findViewById(R.id.dtCodeView);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String url = BASEWEBADDR+codes.get(i).getCode();
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                startActivity(browserIntent);
+                Log.d("ListView onItemSelected",i + " "  + codes.get(i).getCode() );
+            }
+        });
 
 
         codes =  new ArrayList<DtcListItem>();

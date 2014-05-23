@@ -29,12 +29,12 @@
                 android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
-                Gauge:maxDeg="110"
+                Gauge:maxDeg="100"
                 Gauge:minDeg="-110"
                 Gauge:maxVal="250"
                 Gauge:minVal="50"
                 Gauge:stride="20"
-                Gauge:totalTicks="22"
+                Gauge:totalTicks="20"
                 Gauge:tempGradient="true"/>
             <TextView
                 android:id="@+id/temptxtname"
@@ -66,8 +66,6 @@
 
             </RelativeLayout>
 
-
-
         <RelativeLayout
             android:id="@+id/speedLayout"
             android:layout_width="250dp"
@@ -83,7 +81,7 @@
             Gauge:maxVal="160"
             Gauge:minVal="0"
             Gauge:stride="10"
-            Gauge:totalTicks="34"
+            Gauge:totalTicks="32"
             Gauge:tempGradient="false"/>
 
             <TextView
@@ -115,7 +113,6 @@
                 />
         </RelativeLayout>
 
-
         <RelativeLayout
             android:id="@+id/rpmLayout"
             android:layout_width="250dp"
@@ -126,12 +123,12 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            Gauge:maxDeg="90"
+            Gauge:maxDeg="50"
             Gauge:minDeg="-90"
             Gauge:maxVal="8"
             Gauge:minVal="0"
             Gauge:stride="1"
-            Gauge:totalTicks="18"
+            Gauge:totalTicks="16"
             Gauge:tempGradient="false"/>
 
             <TextView
@@ -174,11 +171,11 @@
             android:layout_height="250dp"
             android:layout_gravity="center"
             Gauge:maxDeg="90"
-            Gauge:minDeg="-90"
+            Gauge:minDeg="-100"
             Gauge:maxVal="100"
             Gauge:minVal="0"
             Gauge:stride="10"
-            Gauge:totalTicks="22"
+            Gauge:totalTicks="20"
             Gauge:tempGradient="false"/>
 
             <TextView
@@ -220,12 +217,12 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            Gauge:maxDeg="120"
+            Gauge:maxDeg="110"
             Gauge:minDeg="-120"
             Gauge:maxVal="130"
             Gauge:minVal="30"
             Gauge:stride="10"
-            Gauge:totalTicks="22"
+            Gauge:totalTicks="20"
             Gauge:tempGradient="true"/>
 
             <TextView
@@ -257,6 +254,7 @@
                 />
 
         </RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/voltLayout"
             android:layout_width="250dp"
@@ -267,12 +265,12 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            Gauge:maxDeg="120"
+            Gauge:maxDeg="80"
             Gauge:minDeg="-120"
             Gauge:maxVal="16"
             Gauge:minVal="11"
             Gauge:stride="0.5"
-            Gauge:totalTicks="22"
+            Gauge:totalTicks="20"
             Gauge:tempGradient="false"/>
 
             <TextView
