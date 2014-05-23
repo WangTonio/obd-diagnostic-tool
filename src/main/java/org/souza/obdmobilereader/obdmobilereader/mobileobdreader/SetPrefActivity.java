@@ -9,8 +9,10 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
+import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.Gauge.Gauge;
 
-public class SetPrefActivity extends Activity implements SharedPreferences.OnSharedPreferenceChangeListener {
+
+public class SetPrefActivity extends Activity /*implements SharedPreferences.OnSharedPreferenceChangeListener*/ {
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class SetPrefActivity extends Activity implements SharedPreferences.OnSha
 
 
     }
-
+/*
     @Override
     protected void onResume() {
         super.onResume();
@@ -36,16 +38,16 @@ public class SetPrefActivity extends Activity implements SharedPreferences.OnSha
         pref.unregisterOnSharedPreferenceChangeListener(this);
    }
 
-    /* Causes Null Pointer Exception At the moment */
+     Causes Null Pointer Exception At the moment
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        ScrollView tempp = (ScrollView) LayoutInflater.from(getApplicationContext()).inflate(R.layout.fragment_live_data,null);
+
         if (key.equals("showtemp")) {
-            RelativeLayout temp = (RelativeLayout) tempp.findViewById(R.id.tempLayout);
+            Gauge tmp = (Gauge)findViewById(R.id.tempgauge);
             boolean checked = sharedPreferences.getBoolean(key, true);
             if (checked) {
-                temp.setVisibility(View.VISIBLE);
+                tmp.setVisibility(View.VISIBLE);
             } else {
-                temp.setVisibility(View.GONE);
+                tmp.setVisibility(View.GONE);
             }
         } else if (key.equals("showspeed")) {
             RelativeLayout speed = (RelativeLayout) findViewById(R.id.tempLayout);
@@ -59,5 +61,5 @@ public class SetPrefActivity extends Activity implements SharedPreferences.OnSha
             RelativeLayout colt = (RelativeLayout) findViewById(R.id.tempLayout);
         }
 
-    }
+    }*/
 }

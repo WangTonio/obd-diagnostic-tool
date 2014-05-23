@@ -6,10 +6,12 @@ import android.app.FragmentTransaction;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +24,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,9 +34,11 @@ import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.obddata.DataCon
 import org.souza.obdmobilereader.obdmobilereader.mobileobdreader.obddata.DataGen;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 
-public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFragmentInteractionListener,DeviceListFragment.onDeviceSelectionListener{
+public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFragmentInteractionListener,
+                                                          DeviceListFragment.onDeviceSelectionListener{
 
     public DtcLookUpFragment.OnFragmentInteractionListener dtcLookUpCom;
     public static final int TAB_CNT  = 3;
@@ -68,17 +73,20 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
     @Override
     public void onStart(){
         super.onStart();
+        Log.d("OBD_Main", "onStart");
     }
 
     @Override
     public void onResume(){
         super.onResume();
-
+        Log.d("OBD_Main","onResume");
     }
 
     public void onPause(){
         super.onPause();
-
+        if(this.dc != null){
+            this.dc.killGenerator();
+        }
     }
 
     @Override
@@ -136,6 +144,78 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         }
     }
 
+    private void showHideGauges(){
+        SharedPreferences pref  = PreferenceManager.getDefaultSharedPreferences(this);
+        RelativeLayout tmp;
+        Map<String,?> keys = pref.getAll();
+        if(keys == null) {
+            return;
+        }
+        for(Map.Entry<String,?> entry: keys.entrySet()){
+            String s = entry.getKey();
+            if (s.equals("showtemp")) {
+                tmp = (RelativeLayout) findViewById(R.id.tempLayout);
+                if ((Boolean)entry.getValue()) {
+                    tmp.setVisibility(View.VISIBLE);
+                }else{
+                    tmp.setVisibility(View.GONE);
+                }
+                if(this.dc != null){
+                    this.dc.setGaugeState(0, (Boolean) entry.getValue());
+                }
+            } else if (s.equals("showspeed")) {
+                tmp = (RelativeLayout) findViewById(R.id.speedLayout);
+                if ((Boolean)entry.getValue()) {
+                    tmp.setVisibility(View.VISIBLE);
+                }else{
+                    tmp.setVisibility(View.GONE);
+                }
+                if(this.dc != null){
+                    this.dc.setGaugeState(1, (Boolean) entry.getValue());
+                }
+            } else if (s.equals("showrpm")) {
+                tmp = (RelativeLayout) findViewById(R.id.rpmLayout);
+                if ((Boolean)entry.getValue()) {
+                    tmp.setVisibility(View.VISIBLE);
+                }else{
+                    tmp.setVisibility(View.GONE);
+                }
+                if(this.dc != null){
+                    this.dc.setGaugeState(2, (Boolean) entry.getValue());
+                }
+            } else if (s.equals("showengload")) {
+                tmp = (RelativeLayout) findViewById(R.id.egnLoadLayout);
+                if ((Boolean)entry.getValue()) {
+                    tmp.setVisibility(View.VISIBLE);
+                }else{
+                    tmp.setVisibility(View.GONE);
+                }
+                if(this.dc != null){
+                    this.dc.setGaugeState(3, (Boolean) entry.getValue());
+                }
+            } else if (s.equals("showinttemp")) {
+                tmp = (RelativeLayout) findViewById(R.id.intakeTempLayout);
+                if ((Boolean)entry.getValue()) {
+                    tmp.setVisibility(View.VISIBLE);
+                }else{
+                    tmp.setVisibility(View.GONE);
+                }
+                if(this.dc != null){
+                    this.dc.setGaugeState(4, (Boolean) entry.getValue());
+                }
+            } else if (s.equals("showvolt")) {
+                tmp = (RelativeLayout) findViewById(R.id.voltLayout);
+                if ((Boolean)entry.getValue()) {
+                    tmp.setVisibility(View.VISIBLE);
+                }else{
+                    tmp.setVisibility(View.GONE);
+                }
+                if(this.dc != null){
+                    this.dc.setGaugeState(5, (Boolean) entry.getValue());
+                }
+            }
+        }
+    }
     private void setupFragmentPager(){
         mainF =  new MainFragment();
         liveDataF = new LiveDataFragment();
@@ -163,14 +243,10 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
                 getActionBar().setSelectedNavigationItem(position);
                 if(position == 1){
                     Toast.makeText(getApplication(),"Live Data Tab",Toast.LENGTH_LONG).show();
-
+                    showHideGauges();
                     if(!isLoaded && isConnected){
                         Log.d("DataControl Run", "Starting thread");
-                       // dc.startGenerator();
-
                         isLoaded = true;
-                    }else if(position == 2){
-
                     }
                 }
             }
@@ -292,7 +368,9 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
     }
 
     public void onClickGauge(View view){
-        dc.startGenerator();
+        if(this.dc != null) {
+            dc.startGenerator();
+        }
     }
 
     @Override

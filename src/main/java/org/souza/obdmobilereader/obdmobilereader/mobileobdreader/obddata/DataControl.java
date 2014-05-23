@@ -41,17 +41,24 @@ public class DataControl {
     }
 
     public void startGenerator(){
-        this.valGen =  new valueGenerator(false);
+        if(this.valGen != null){
+            this.valGen.interrupt();
+            this.valGen = null;
+        }
+        this.valGen =  new valueGenerator(true);
         this.valGen.start();
     }
-
+    public void killGenerator(){
+        if(this.valGen != null) {
+            this.valGen.interrupt();
+            this.valGen = null;
+        }
+    }
     private class valueGenerator extends Thread {
         private boolean isRunning;
-        private Object mPauseLock;
 
         public valueGenerator(boolean state){
             this.isRunning = state;
-            this.mPauseLock = new Object();
         }
 
         public boolean getIsRunning(){return this.isRunning;}
@@ -61,7 +68,6 @@ public class DataControl {
             boolean valInc = true;
             DataGen tmp;
             float val = 0.f;
-            this.onResume();
             int x = 15;
             int size = gauges.size();
             try {
@@ -69,8 +75,11 @@ public class DataControl {
                     val = (float) Math.cos(((float)x/10));
                     for(int i =0;i< size;i++) {
                         tmp = gauges.get(i);
-                        int valInt = (int) (val*tmp.getMaxVal());
-                        gHanlder.obtainMessage(0, tmp.getGaugeID(), valInt).sendToTarget();
+                        if(tmp.isActive())
+                        {
+                            int valInt = (int) (val * tmp.getMaxVal());
+                            gHanlder.obtainMessage(0, tmp.getGaugeID(), valInt).sendToTarget();
+                        }
                     }
                     if (valInc) {
                         x -= 1;
@@ -84,28 +93,12 @@ public class DataControl {
                     }
                     Thread.sleep(1500);
                 }
+            } catch (InterruptedException ex){
+                // Interrupting thread to kill it
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
-        public void onPause() {
-            synchronized (mPauseLock) {
-                isRunning = false;
-            }
-
-        }
-
-        public void onResume() {
-            synchronized (mPauseLock) {
-                isRunning = true;
-                mPauseLock.notifyAll();
-            }
-        }
-
-
     }
-
-
 }
 
