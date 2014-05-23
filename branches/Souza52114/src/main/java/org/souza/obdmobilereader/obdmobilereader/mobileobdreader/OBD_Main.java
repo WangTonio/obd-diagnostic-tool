@@ -183,7 +183,7 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
                 if(this.dc != null){
                     this.dc.setGaugeState(2, (Boolean) entry.getValue());
                 }
-            } else if (s.equals("showengload")) {
+            } else if (s.equals("showengineload")) {
                 tmp = (RelativeLayout) findViewById(R.id.egnLoadLayout);
                 if ((Boolean)entry.getValue()) {
                     tmp.setVisibility(View.VISIBLE);
@@ -193,7 +193,7 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
                 if(this.dc != null){
                     this.dc.setGaugeState(3, (Boolean) entry.getValue());
                 }
-            } else if (s.equals("showinttemp")) {
+            } else if (s.equals("showintaketemp")) {
                 tmp = (RelativeLayout) findViewById(R.id.intakeTempLayout);
                 if ((Boolean)entry.getValue()) {
                     tmp.setVisibility(View.VISIBLE);
@@ -216,6 +216,7 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
             }
         }
     }
+
     private void setupFragmentPager(){
         mainF =  new MainFragment();
         liveDataF = new LiveDataFragment();
