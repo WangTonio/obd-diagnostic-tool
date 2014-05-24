@@ -37,15 +37,6 @@ public class DtcLookUpFragment extends Fragment {
     public DtcListAdapter codeAdapter;
     ArrayList<DtcListItem> codes;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DtcLookUpFragment.
-     */
-
     public static DtcLookUpFragment newInstance(String param1, String param2) {
         DtcLookUpFragment fragment = new DtcLookUpFragment();
         Bundle args = new Bundle();

@@ -44,34 +44,13 @@ public final class Gauge extends View{
     private Paint scalePaint;
     private RectF scaleRect;
 
-    private Paint titlePaint;
-    private Path titlePath;
-
-    private Paint logoPaint;
-    private Bitmap logo;
-    private Matrix logoMatrix;
-    private float logoScale;
-
     private Paint handPaint;
     private Path handPath;
     private Paint handScrewPaint;
 
     private Paint backgroundPaint;
-    // end drawing tools
 
     private Bitmap background; // holds the cached static part
-
-    // scale configuration
-    /*
-    private int totalNicks = 22;
-    private int degreeRange = 220;
-    private float degreesPerNick = (float)degreeRange / totalNicks;
-    private int centerDegree = 0; // the one in the top center (12 o'clock)
-    private int minDegrees = -110;
-    private int maxDegrees = 90;
-    private int minVal = 0;
-    private int maxVal = 250;
-    */
 
     private int totalNicks;
     private int degreeRange;
@@ -93,12 +72,12 @@ public final class Gauge extends View{
     private float handAcceleration  = 0.0f;
     private long lastHandMoveTime   = -1L;
 
-/*
+
     public Gauge(Context context) {
         super(context);
         init();
     }
-*/
+
     public Gauge(Context context, AttributeSet attrs) {
         super(context, attrs);
         grabCustomAttributes(context, attrs);
@@ -303,7 +282,7 @@ public final class Gauge extends View{
 
         if (mode == MeasureSpec.AT_MOST || mode == MeasureSpec.EXACTLY) {
             return size;
-        } else { // (mode == MeasureSpec.UNSPECIFIED)
+        } else {
             return getPreferredSize();
         }
     }
@@ -353,16 +332,6 @@ public final class Gauge extends View{
 
         }
         canvas.restore();
-    }
-
-    private int nickToDegree(int nick) {
-        int rawDegree = ((nick < totalNicks / 2) ? nick : (nick - totalNicks)) * 2;
-        int shiftedDegree = rawDegree + centerDegree;
-        return shiftedDegree;
-    }
-
-    private float degreeToAngle(float degree) {
-        return (degree - centerDegree) / 2.0f * degreesPerNick;
     }
 
     private void drawBackground(Canvas canvas) {
@@ -478,14 +447,5 @@ public final class Gauge extends View{
         if(x <= minVal) return minDegrees;
         if(x >= maxVal) return maxDegrees;
         return (((x - minVal) * (maxDegrees - minDegrees)) / (maxVal - minVal)) + minDegrees;
-    }
-
-    private float getRelativeTemperaturePosition() {
-
-        if (handPosition < centerDegree) {
-            return - (centerDegree - handPosition) / (float) (centerDegree - minDegrees);
-        } else {
-            return (handPosition - centerDegree) / (float) (maxDegrees - centerDegree);
-        }
     }
 }
