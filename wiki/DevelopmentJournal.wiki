@@ -35,8 +35,11 @@
  * Added code for custom XML attributes and retrieving those attributes
 
 = Week of May 8th    =
- * Working on Scaling issues with Gauge scale and needle accuracy
+ * Working on drawScale issues with Gauge scale and needle accuracy
 = Week of May 15th   =
-
+* Added the ability to click on the trouble code list view in order to    open a google search on that code
+* Fixed gauge accuracy issue, gauge scales are now drawn correctly, and needles values now point to correct values
+* Added the ability to hide or show gauges through Settings screen
 = Week of May 22nd   =
+* Fixed crashing issues when closing application
 Demo Day
