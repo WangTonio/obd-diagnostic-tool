@@ -98,6 +98,11 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         super.onDestroy();
     }
 
+    /**
+     * Set up Gauge Objects for Data Control Object
+     * We Give each gauge an ID, and retrieves
+     * its respective min and max value
+     */
     public void setupDataGenerator(){
         ArrayList<DataGen> temp =  new ArrayList<DataGen>();
         Gauge tmp;
@@ -127,6 +132,10 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         dc = new DataControl(temp, gHandler);
     }
 
+    /**
+     * Checks to see if device has bluetooth, and if
+     * it does, see if its enabled. If its not ask to enable it
+     */
     private void checkBluetooth(){
         mBTA = BluetoothAdapter.getDefaultAdapter();
         Log.d("checkBluetooh -->"," REQUEST_ENABLE_BT: " + mBTA.getBondedDevices());
@@ -144,6 +153,10 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         }
     }
 
+    /**
+     * Determines if each Specific gauge layout should be hidden
+     * or shown depending on the value set in preferences
+     */
     private void showHideGauges(){
         SharedPreferences pref  = PreferenceManager.getDefaultSharedPreferences(this);
         RelativeLayout tmp;
@@ -334,6 +347,16 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         }
     }
 
+    /**
+     * Function for main screen button
+     * State 0 is disconnected
+     *  Asks to select obd Device
+     *  then attempts to make connection with device
+     * State 1 is connected
+     *  Kills connection and Data control object
+     * Could not get android selector to work correctly
+     *
+     */
     private static int pressed = 0;
     public void onClickCon(View view){
         Button btn =  (Button) view;
@@ -408,6 +431,10 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
         }
     }
 
+    /**
+     * Handler that receives messages to update Gauges and textview for
+     * respective gauge.
+     */
     private final class GaugeHandler extends Handler {
 
         public void handleMessage(Message msg){
