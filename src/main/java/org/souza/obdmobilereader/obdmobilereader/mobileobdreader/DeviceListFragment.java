@@ -33,7 +33,7 @@ public class DeviceListFragment extends DialogFragment {
             Intent enableBT =  new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivity(enableBT);
         }
-
+        //Get list of paired devices
         pairedDevices = new ArrayList<BluetoothDevice>(this.mBTA.getBondedDevices());
         devInfo = new String[pairedDevices.size()];
         for( int i = 0; i < this.devInfo.length; i++){

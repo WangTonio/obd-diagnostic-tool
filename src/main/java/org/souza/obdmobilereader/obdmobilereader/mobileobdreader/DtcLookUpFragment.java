@@ -79,7 +79,7 @@ public class DtcLookUpFragment extends Fragment {
             }
         });
 
-
+        //Create Code Adapter For Listview
         codes =  new ArrayList<DtcListItem>();
         codeAdapter = new DtcListAdapter(codes,getActivity());
         lv.setAdapter(codeAdapter);
