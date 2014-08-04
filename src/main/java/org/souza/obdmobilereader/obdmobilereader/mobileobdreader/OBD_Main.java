@@ -249,7 +249,7 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
 
         myViewPager.setAdapter(myFragmentPageAdapter);
 
-        actioBarSetup();
+        actionBarSetup();
 
         myViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
             @Override
@@ -279,16 +279,20 @@ public class OBD_Main extends FragmentActivity implements DtcLookUpFragment.OnFr
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            Intent intent;
-            intent = new Intent(this,SetPrefActivity.class);
-            startActivity(intent);
-            Log.d("Options Menu Item Selected", "");
+            //Intent intent;
+            //intent = new Intent(this,SetPrefActivity.class);
+            //startActivity(intent);
+            //Log.d("Options Menu Item Selected", "");
+            getFragmentManager().beginTransaction()
+                    .replace(android.R.id.content,new PrefFragment())
+                    .commit();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void actioBarSetup(){
+
+    private void actionBarSetup(){
         final ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         ActionBar.TabListener tabListener = new ActionBar.TabListener(){
